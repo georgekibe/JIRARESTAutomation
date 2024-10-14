@@ -1,4 +1,6 @@
-package pojo;
+package pojo.deserialization;
+
+import pojo.deserialization.Courses;
 
 public class GetPojoCourseDetails {
 

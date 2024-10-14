@@ -1,4 +1,4 @@
-package pojo;
+package pojo.deserialization;
 
 public class Mobile {
 

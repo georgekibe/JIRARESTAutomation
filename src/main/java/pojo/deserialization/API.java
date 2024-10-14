@@ -1,6 +1,6 @@
-package pojo;
+package pojo.deserialization;
 
-public class WebAutomation {
+public class API {
 
     private String courseTitle;
     private String price;

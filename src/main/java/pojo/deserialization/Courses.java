@@ -1,4 +1,4 @@
-package pojo;
+package pojo.deserialization;
 
 import java.util.List;
 
