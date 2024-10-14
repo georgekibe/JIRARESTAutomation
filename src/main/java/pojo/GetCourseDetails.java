@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 
 public class GetCourseDetails {
 
-    // The request I am using uses OAuth for aunthentication
+    // The request I am using OAuth for authentication
     // Get the authorization (client credentials
     // Use the authorization  to get the course details
     //Then pass the response to use POJO Classes
@@ -34,9 +34,34 @@ public class GetCourseDetails {
     public void getCourseDetails(){
         // get course details
 
-        given().pathParam("access_token", access_token)
+       GetPojoCourseDetails getCourseDetailsResponse =  given().pathParam("access_token", access_token)
                 .when().get("https://rahulshettyacademy.com/oauthapi/getCourseDetails?access_token={access_token}")
-                .then().log().all();
+                .then().log().all().extract().as(GetPojoCourseDetails.class);
+
+
+      // print the linkedIn URL
+       String linkedIn =  getCourseDetailsResponse.getLinkedIn();
+      System.out.println(linkedIn);
+      // print the Cypress Course Price
+      String cypressPrice = getCourseDetailsResponse.getCourses().getWebAutomation().get(0).getPrice();
+      System.out.println(cypressPrice);
+      // print the mobile entry that is for Appium
+      String mobileCourseTitle = getCourseDetailsResponse.getCourses().getMobile().get(0).getCourseTitle();
+      System.out.println(mobileCourseTitle);
+
+      /// printing the sum for all the course under Web Automation
+
+    int arraySize = getCourseDetailsResponse.getCourses().getWebAutomation().size();
+    System.out.println("Size: " +arraySize);
+
+    int sum=0;
+    for (int i=0 ; i < arraySize; i++)
+    {
+        int price  = Integer.parseInt(getCourseDetailsResponse.getCourses().getWebAutomation().get(i).getPrice());
+        sum += price;
+    }
+
+    System.out.println("Sum: " + sum);
 
     }
 

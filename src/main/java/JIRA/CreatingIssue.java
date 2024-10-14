@@ -47,7 +47,6 @@ public class CreatingIssue {
                 .post("/rest/api/3/issue/{id}/attachments")
                 .then().log().all().assertThat().statusCode(200);
 
-
     }
 
 
