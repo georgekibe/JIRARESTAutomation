@@ -23,7 +23,7 @@ public class AddLocationMain {
         // initialize the payload parameters using the pojo serialization
         LocationDetails locationDetails = new LocationDetails();
 
-        Location location =  new Location();
+        Location location = new Location();
         location.setLat(-31.48488);
         location.setLng(75.51515);
         locationDetails.setLocation(location);
@@ -42,7 +42,7 @@ public class AddLocationMain {
 
 
         // request payload
-        String addLocationResponse = given().queryParam("key", "qaclick123")
+        String addLocationResponse = given().log().all().queryParam("key", "qaclick123")
                 .body(locationDetails)
                 .when().post("https://rahulshettyacademy.com/maps/api/place/add/json")
                 .then().assertThat().statusCode(200).extract().asString();
