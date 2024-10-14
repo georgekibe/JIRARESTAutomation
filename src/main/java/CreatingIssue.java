@@ -35,7 +35,7 @@ public class CreatingIssue {
         String issueID = js.getString("id");
         System.out.println("ID: " + issueID);
 
-        //Adding an attachment to the issue I have just created above
+        //Adding an attachment to the issue I have just created above and asserting success
 
         given().pathParam("id", issueID)
                 .header("X-Atlassian-Token","no-check")
