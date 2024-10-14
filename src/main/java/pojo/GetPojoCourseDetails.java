@@ -1,12 +1,12 @@
 package pojo;
 
-public class getPojoCourseDetails {
+public class GetPojoCourseDetails {
 
     private String instructor;
     private String url;
     private String services;
     private String expertise;
-    private String courses;
+    private Courses courses;
     private String linkedIn;
 
     public String getInstructor() {
@@ -41,11 +41,11 @@ public class getPojoCourseDetails {
         this.expertise = expertise;
     }
 
-    public String getCourses() {
+    public Courses getCourses() {
         return courses;
     }
 
-    public void setCourses(String courses) {
+    public void setCourses(Courses courses) {
         this.courses = courses;
     }
 
