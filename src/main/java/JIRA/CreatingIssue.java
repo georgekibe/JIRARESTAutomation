@@ -1,3 +1,5 @@
+package JIRA;
+
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
